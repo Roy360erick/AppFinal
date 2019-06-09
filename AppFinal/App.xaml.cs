@@ -12,7 +12,7 @@
         {
             InitializeComponent();
 
-            MainPage = new IncidenciasPage();
+            MainPage = new NavigationPage( new IncidenciasPage());
         }
 
         protected override void OnStart()

@@ -9,6 +9,8 @@
         <!--Locator-->
         <infra:InstanceLocator x:Key="Locator"/>
         
+        <!--Parametros-->
+        <x:String x:Key="UrlAPI" >https://integrador-roy360erick.c9users.io:8080</x:String>
         
     </Application.Resources>
 </Application>

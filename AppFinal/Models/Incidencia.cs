@@ -3,11 +3,17 @@
     using System;
     public class Incidencia
     {
-        public int id { get; set; }
-        public string responsable { get; set; }
-        public string motivo { get; set; }
-        public int tipoIncidencia { get; set; }
-        public DateTime fechaIncidencia { get; set; }
-        public bool estado { get; set; }
+        public int Id { get; set; }
+        public string Responsable { get; set; }
+        public string Motivo { get; set; }
+        public int TipoIncidencia { get; set; }
+        public DateTime FechaIncidencia { get; set; }
+        public bool Estado { get; set; }
+
+
+        public override string ToString()
+        {
+            return this.Responsable;
+        }
     }
 }

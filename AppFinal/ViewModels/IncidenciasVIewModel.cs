@@ -3,8 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Windows.Input;
     using AppFinal.Models;
     using AppFinal.Services;
+    using GalaSoft.MvvmLight.Command;
     using Xamarin.Forms;
 
     public class IncidenciasViewModel : BaseViewModel
@@ -14,11 +16,21 @@
 
         private ObservableCollection<Incidencia> incidencias;
 
+        public bool isRefreshing;
+
         public ObservableCollection<Incidencia> Incidencias 
         {
             get { return this.incidencias; }
             set { this.SetValue(ref this.incidencias , value); }
         }
+
+        public bool IsRefreshing 
+        {
+            get { return this.isRefreshing; }
+            set { this.SetValue(ref this.isRefreshing, value); }
+        }
+
+
 
         public IncidenciasViewModel()
         {
@@ -26,17 +38,37 @@
             this.LoadIncidencias();
         }
 
+
         private async void LoadIncidencias()
         {
-            var response = await this.apiService.GetList<Incidencia>("https://integrador-roy360erick.c9users.io:8080", "/api", "/incidencia");
+            this.IsRefreshing = true;
+            var connection = await this.apiService.CheckConnection();
+            if(!connection.IsSuccess)
+            {
+                this.IsRefreshing = false;
+                await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
+            }
+
+            var url = Application.Current.Resources["UrlAPI"].ToString();
+            var response = await this.apiService.GetList<Incidencia>(url, "/api", "/incidencia");
             if (!response.IsSuccess)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Accept");
+                this.IsRefreshing = true;
+                await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
             }
 
             var list = (List<Incidencia>)response.Result;
             this.Incidencias = new ObservableCollection<Incidencia>(list);
+            this.IsRefreshing = false;
 
+        }
+
+        public ICommand RefreshCommand
+        {
+            get 
+            {
+                return new RelayCommand(LoadIncidencias);
+            }
         }
     }
 }
