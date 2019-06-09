@@ -4,7 +4,11 @@
              x:Class="AppFinal.Views.IncidenciasPage"
              BindingContext="{Binding Main , Source={StaticResource Locator}}"
              Title="Incidencias">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Icon="ic_action_add_circle" Command="{Binding AddIncidenciaCommand}"/>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
+        
         <StackLayout
             BindingContext="{Binding Incidencias}"
             Padding="5">
@@ -31,6 +35,5 @@
                 </ListView.ItemTemplate>
             </ListView>
         </StackLayout>
-        
     </ContentPage.Content>
 </ContentPage>

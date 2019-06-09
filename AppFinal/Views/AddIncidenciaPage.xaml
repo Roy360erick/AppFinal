@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="AppFinal.Views.AddIncidenciaPage"
+             BindingContext="{Binding Main , Source={StaticResource Locator}}"
+             Title="Registrar Incidencia">
+    <ContentPage.Content>
+        <ScrollView
+            Padding="10">
+            <StackLayout BindingContext="{Binding AddIncidencia}">
+            <Label 
+                Text="Responsable"/>
+            <Entry
+                Placeholder="Juan Flores"/>
+            <Label 
+                Text="Tipo de Incidencia"/>
+            <Picker
+                ItemsSource="{Binding TipoIncidenciasList}"
+                ItemDisplayBinding="{Binding Value}"/>
+            <Label 
+                Text="Fecha de Incidencia"/>
+            <DatePicker
+                />
+            <Label 
+                Text="Solucionado"/>
+            <Switch/>
+             <Label 
+                Text="Motivo"/>
+            <Editor
+                VerticalOptions="FillAndExpand"/>
+            <Button
+                BackgroundColor="Navy"
+                BorderRadius="23"
+                HeightRequest="46"
+                Text="Registrar"
+                TextColor="White">
+            </Button>
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

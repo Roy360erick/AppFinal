@@ -91,13 +91,15 @@
     <AndroidResource Include="Resources\mipmap-xxhdpi\launcher_foreground.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
+    <AndroidResource Include="Resources\drawable\ic_action_add_circle.png" />
+    <AndroidResource Include="Resources\mipmap-mdpi\ic_action_add_circle.png" />
+    <AndroidResource Include="Resources\mipmap-xhdpi\ic_action_add_circle.png" />
+    <AndroidResource Include="Resources\mipmap-xxhdpi\ic_action_add_circle.png" />
+    <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_action_add_circle.png" />
+    <AndroidResource Include="Resources\mipmap-hdpi\ic_action_add_circle.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
-    <Folder Include="Resources\drawable-hdpi\" />
-    <Folder Include="Resources\drawable-xhdpi\" />
-    <Folder Include="Resources\drawable-xxhdpi\" />
-    <Folder Include="Resources\drawable-xxxhdpi\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AppFinal\AppFinal.csproj">

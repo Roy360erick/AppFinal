@@ -50,7 +50,9 @@
             }
 
             var url = Application.Current.Resources["UrlAPI"].ToString();
-            var response = await this.apiService.GetList<Incidencia>(url, "/api", "/incidencia");
+            var prefix = Application.Current.Resources["Prefix"].ToString();
+            var controller = Application.Current.Resources["Controller"].ToString();
+            var response = await this.apiService.GetList<Incidencia>(url,prefix, controller);
             if (!response.IsSuccess)
             {
                 this.IsRefreshing = true;

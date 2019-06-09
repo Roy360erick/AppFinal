@@ -11,6 +11,8 @@
         
         <!--Parametros-->
         <x:String x:Key="UrlAPI" >https://integrador-roy360erick.c9users.io:8080</x:String>
+        <x:String x:Key="Prefix" >/api</x:String>
+        <x:String x:Key="Controller" >/incidencia</x:String>
         
     </Application.Resources>
 </Application>
