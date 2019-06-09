@@ -7,7 +7,7 @@
     using AppFinal.Services;
     using Xamarin.Forms;
 
-    public class IncidenciasVIewModel : BaseViewModel
+    public class IncidenciasViewModel : BaseViewModel
     {
 
         private ApiService apiService;
@@ -20,7 +20,7 @@
             set { this.SetValue(ref this.incidencias , value); }
         }
 
-        public IncidenciasVIewModel()
+        public IncidenciasViewModel()
         {
             this.apiService = new ApiService();
             this.LoadIncidencias();

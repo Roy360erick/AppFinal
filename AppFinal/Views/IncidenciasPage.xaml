@@ -6,6 +6,8 @@
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Incidencias}">
+            <Label Text="Hola Bienvenido"/>
+            <ListView ItemsSource="{Binding Incidencias}"/>
             
         </StackLayout>
         
