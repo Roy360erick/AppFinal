@@ -16,6 +16,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="11.0.1" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1" />
     <PackageReference Include="Xam.Plugin.Connectivity" Version="3.2.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -23,5 +24,6 @@
     <Folder Include="Views\" />
     <Folder Include="Services\" />
     <Folder Include="Infraestructure\" />
+    <Folder Include="Intefaces\" />
   </ItemGroup>
 </Project>

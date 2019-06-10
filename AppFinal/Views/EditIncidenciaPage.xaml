@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="AppFinal.Views.AddIncidenciaPage"
+             x:Class="AppFinal.Views.EditIncidenciaPage"
              BindingContext="{Binding Main , Source={StaticResource Locator}}"
-             Title="Registrar Incidencia">
+             Title="Actualizar Incidencia">
     <ContentPage.Content>
         <ScrollView
             Padding="10">
-            <StackLayout BindingContext="{Binding AddIncidencia}">
+            <StackLayout BindingContext="{Binding EditIncidencia}">
             <Label 
                 Text="Responsable"/>
             <Entry
                 Placeholder="Juan Flores"
-                Text="{Binding Responsable}"/>
+                Text="{Binding Incidencia.Responsable}"/>
             <Label 
                 Text="Tipo de Incidencia"/>
             <Picker
@@ -24,27 +24,35 @@
                 Text="Fecha de Incidencia"/>
             <DatePicker
                 MinimumDate="2019/04/01"
-                Date="{Binding FechaIncidencia}"/>
+                Date="{Binding Incidencia.FechaIncidencia}"/>
             <StackLayout Orientation="Horizontal">
                 <Label 
                     Text="Solucionado"
                     HorizontalOptions="StartAndExpand"/>
                 <Switch
                     HorizontalOptions="End"
-                    IsToggled="{Binding Estado}"/>    
+                    IsToggled="{Binding Incidencia.Estado}"/>    
             </StackLayout> 
              <Label 
                 Text="Motivo"/>
             <Editor
                 VerticalOptions="FillAndExpand"
-                Text="{Binding Motivo}"/>
+                Text="{Binding Incidencia.Motivo}"/>
             <Button
                 BackgroundColor="Navy"
                 BorderRadius="23"
                 HeightRequest="46"
                 IsEnabled="{Binding IsEnable}"
-                Command="{Binding SaveCommand}"
-                Text="Registrar"
+                Command="{Binding UpdateCommand}"
+                Text="Actualizar"
+                TextColor="White"/>
+            <Button
+                BackgroundColor="Red"
+                BorderRadius="23"
+                HeightRequest="46"
+                IsEnabled="{Binding IsEnable}"
+                Command="{Binding DeleteCommand}"
+                Text="Eliminar"
                 TextColor="White"/>
         </StackLayout>
         </ScrollView>

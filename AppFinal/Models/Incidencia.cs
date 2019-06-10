@@ -6,7 +6,7 @@
         public int Id { get; set; }
         public string Responsable { get; set; }
         public string Motivo { get; set; }
-        public int TipoIncidencia { get; set; }
+        public string TipoIncidencia { get; set; }
         public DateTime FechaIncidencia { get; set; }
         public bool Estado { get; set; }
 

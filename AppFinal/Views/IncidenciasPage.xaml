@@ -21,14 +21,25 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Grid>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Editar" Command="{Binding EditIncidenciaCommand}"/>
+                                <MenuItem Text="Eliminar" Command="{Binding DeleteIncidenciaCommand}" IsDestructive="true"/>
+                            </ViewCell.ContextActions>
+                            <Grid Padding="2">
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding EditIncidenciaCommand}"/>
+                                </Grid.GestureRecognizers>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="2*"/>
                                     <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="3*"/>
                                 </Grid.ColumnDefinitions>
-                                <Label FontAttributes="Bold" Grid.Column="0" Text="{Binding Responsable }"/>
-                                <Label FontAttributes="Bold" Grid.Column="1" Text="{Binding FechaIncidencia }"/>
-                                <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="{Binding Motivo }"/>
+                                <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="1" Text="Responsable" FontSize="Small"/>
+                                <Label FontAttributes="Italic" Grid.Column="1" Grid.Row="1" Text="{Binding Responsable }" FontSize="Small" />
+                                <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="2" Text="Motivo: " FontSize="Small"/>
+                                <Label FontAttributes="Italic" Grid.Column="1" Grid.Row="2" Text="{Binding Motivo }" FontSize="Small"/>
+                                <Label FontAttributes="Bold" Grid.Column="0" Grid.Row="3" Text="Solucionado:" FontSize="Small"/>
+                                <Switch Grid.Column="1" Grid.Row="3" IsEnabled="false" IsToggled="{Binding Estado}"/>
+                                <Label FontAttributes="Bold" Grid.Column="1" HorizontalOptions="EndAndExpand" Text="{Binding FechaIncidencia ,  StringFormat='{0:dddd, dd MMMM yyyy}'}" Font="10"/>
                             </Grid>
                         </ViewCell>
                     </DataTemplate>
