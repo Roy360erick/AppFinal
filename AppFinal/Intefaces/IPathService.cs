@@ -1,10 +1,10 @@
-﻿using System;
-namespace AppFinal.Intefaces
+﻿namespace AppFinal.Intefaces
 {
-    public class IPathService
+    using System;
+
+
+    public interface IPathService
     {
-        public IPathService()
-        {
-        }
+        string GetDatabasePath();
     }
 }
